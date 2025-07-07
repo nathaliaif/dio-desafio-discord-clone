@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 :root {
-  --dark: #23272a;
-  --dark-hover: #3b3b3b;
+  --dark: #282841;
+  --dark-hover: #4a4d6b;
   --light: #ffffff;
   --light-hover: #dfdede;
   --grey: #f6f6f6;
+  --primary: #1c1b29;
 
   --font-family: "Open Sans", sans-serif;
   --secondary-font: "Luckiest Guy", cursive;
@@ -47,7 +48,7 @@ header {
     font-size: 2rem;
     color: var(--light);
     opacity: 1;
-    transition: 1s ease-in-out, scale 0.3s;
+    transition: 1s ease-in-out;
     transition-delay: calc(200ms * var(--i));
 
     @starting-style {
@@ -72,7 +73,7 @@ header {
     row-gap: 1rem;
 
     opacity: 1;
-    transition: 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
     transition-delay: calc(200ms * var(--i));
 
     @starting-style {
@@ -86,7 +87,7 @@ header {
     border-radius: 50px;
     border: none;
     background: var(--light);
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
 
     &:hover {
       cursor: pointer;
@@ -122,28 +123,6 @@ main section {
   }
 }
 
-.loadFromLeft {
-  transform: translateX(0);
-  opacity: 1;
-  transition: 1.2s ease-in-out;
-
-  @starting-style {
-    opacity: 0;
-    transform: translateX(-50%);
-  }
-}
-
-.loadFromRight {
-  transform: translateX(0);
-  opacity: 1;
-  transition: 1.2s ease-in-out;
-
-  @starting-style {
-    opacity: 0;
-    transform: translateX(150%);
-  }
-}
-
 main section:nth-child(even) {
   background: var(--grey);
 }
@@ -157,12 +136,37 @@ main section:last-child {
 
 footer {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer__logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding: 2rem;
   background: var(--dark);
 
   img {
     width: 50%;
+  }
+}
+
+.footer__attribution-container {
+  padding: 0.5rem 0;
+  background: var(--primary);
+  color: var(--light);
+  text-align: center;
+
+  a {
+    color: var(--light);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -239,6 +243,28 @@ footer {
     }
   }
 
+  /* .loadFromLeft {
+    transform: translateX(0);
+    opacity: 1;
+    transition: 1.2s ease-in-out;
+
+    @starting-style {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  .loadFromRight {
+    transform: translateX(0);
+    opacity: 1;
+    transition: 1.2s ease-in-out;
+
+    @starting-style {
+      opacity: 0;
+      transform: translateX(150%);
+    }
+  } */
+
   .last-section {
     flex-direction: column;
     row-gap: 0;
@@ -258,11 +284,15 @@ footer {
     }
   }
 
-  footer {
+  .footer__logo-container {
     padding: 3rem;
 
     img {
       width: 13rem;
     }
+  }
+
+  .footer__attribution-container {
+    padding: 1rem 0;
   }
 }
