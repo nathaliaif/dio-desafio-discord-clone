@@ -2,7 +2,9 @@
 
 :root {
   --dark: #23272a;
+  --dark-hover: #3b3b3b;
   --light: #ffffff;
+  --light-hover: #dfdede;
   --grey: #f6f6f6;
 
   --font-family: "Open Sans", sans-serif;
@@ -55,9 +57,12 @@ header {
     width: 100%;
     border-radius: 50px;
     border: none;
+    background: var(--light);
+    transition: 0.3s;
 
     &:hover {
       cursor: pointer;
+      background: var(--light-hover);
     }
   }
 
@@ -65,6 +70,10 @@ header {
     padding: 0.8rem;
     background: var(--dark);
     color: var(--light);
+
+    &:hover {
+      background: var(--dark-hover);
+    }
   }
 }
 
@@ -129,8 +138,12 @@ footer {
     }
 
     button {
-      padding: 1rem;
-      width: 17rem;
+      padding: 1.2rem 1.5rem;
+      white-space: nowrap;
+    }
+
+    button:nth-child(2) {
+      padding: 1.2rem 1.5rem;
     }
   }
 
