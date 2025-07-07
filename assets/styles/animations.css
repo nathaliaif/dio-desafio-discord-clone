@@ -1,0 +1,138 @@
+@media screen and (min-width: 1000px) {
+  /* AutoShow animation */
+  .autoShow {
+    animation: autoShowAnimation both;
+    animation-timeline: view(80% auto);
+  }
+
+  @keyframes autoShowAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(200px) scale(0.3);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Blur animation */
+  .autoBlur {
+    animation: autoBlurAnimation both;
+    animation-timeline: view();
+  }
+
+  @keyframes autoBlurAnimation {
+    0% {
+      filter: blur(40px);
+    }
+
+    45%,
+    55% {
+      filter: blur(0px);
+    }
+
+    100% {
+      filter: blur(40px);
+    }
+  }
+
+  /* Left Swipe Animation */
+  .showFromLeft {
+    animation: showFromLeftAnimation 0.8s ease-out;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50%;
+    animation-fill-mode: backwards;
+  }
+
+  @keyframes showFromLeftAnimation {
+    from {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Right Swipe Animation */
+  .showFromRight {
+    animation: showFromRightAnimation 0.8s ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50%;
+    animation-fill-mode: backwards;
+  }
+
+  @keyframes showFromRightAnimation {
+    from {
+      transform: translateX(150%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Zooom In on Scroll Animation */
+  .zoomInImage {
+    animation: zoomInImageAnimation both;
+    animation-timeline: scroll();
+    animation-range: cover 0% cover 100%;
+    animation-fill-mode: both;
+  }
+
+  @keyframes zoomInImageAnimation {
+    0% {
+      background-size: 100%;
+      opacity: 1;
+    }
+
+    100% {
+      background-size: 200%;
+      opacity: 0;
+    }
+  }
+
+  .scrollFromRight {
+    animation: scrollFromRightAnimation both;
+    animation-timeline: scroll();
+    animation-range: cover 0% cover 100%;
+    animation-fill-mode: both;
+  }
+
+  @keyframes scrollFromRightAnimation {
+    to {
+      opacity: 0;
+      transform: translateX(150%);
+    }
+
+    from {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+  .scrollFromLeft {
+    animation: scrollFromLeftAnimation both;
+    animation-timeline: scroll();
+    animation-range: cover 0% cover 100%;
+    animation-fill-mode: both;
+  }
+
+  @keyframes scrollFromLeftAnimation {
+    to {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+
+    from {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+}
