@@ -28,6 +28,7 @@ body {
 }
 
 header {
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
@@ -178,10 +179,11 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: -1;
+  z-index: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  pointer-events: auto;
 }
 
 .footer__logo-container {
@@ -214,6 +216,17 @@ footer {
   }
 }
 
+.waves {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  min-height: 40px;
+  margin-bottom: -7px;
+  max-height: 150px;
+}
+
 @media screen and (min-width: 1000px) {
   header {
     padding: 10rem 2rem;
@@ -243,6 +256,11 @@ footer {
     button:nth-of-type(2) {
       padding: 1.2rem 3rem;
     }
+  }
+
+  .waves {
+    height: 70px;
+    min-height: 70px;
   }
 
   main {
