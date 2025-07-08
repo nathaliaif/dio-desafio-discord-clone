@@ -1,15 +1,20 @@
 .parallax-footer {
   animation: footerParallax linear;
   animation-timeline: scroll();
-  animation-range: entry 70% exit 100%;
 }
 
 @keyframes footerParallax {
-  from {
-    scale: 1.5;
+  0% {
+    opacity: 0;
   }
-  to {
+
+  80% {
+    scale: 2;
+  }
+
+  100% {
     scale: 1;
+    opacity: 1;
   }
 }
 
