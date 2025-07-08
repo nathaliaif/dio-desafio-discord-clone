@@ -24,6 +24,7 @@ body {
   height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -133,11 +134,19 @@ header {
   }
 }
 
+main {
+  box-shadow: 3px 2px 2px 0px rgba(51, 51, 51, 0.5);
+  padding-bottom: 150px;
+}
+
 main section {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
   padding: 3rem 1.5rem;
+  position: relative;
+  z-index: 2;
+  background: var(--light);
 
   .section__texts {
     display: flex;
@@ -166,6 +175,10 @@ main section:last-child {
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -236,6 +249,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 200px;
   }
 
   main section {
@@ -273,28 +287,6 @@ footer {
       max-width: 21rem;
     }
   }
-
-  /* .loadFromLeft {
-    transform: translateX(0);
-    opacity: 1;
-    transition: 1.2s ease-in-out;
-
-    @starting-style {
-      opacity: 0;
-      transform: translateX(-50%);
-    }
-  }
-
-  .loadFromRight {
-    transform: translateX(0);
-    opacity: 1;
-    transition: 1.2s ease-in-out;
-
-    @starting-style {
-      opacity: 0;
-      transform: translateX(150%);
-    }
-  } */
 
   .last-section {
     flex-direction: column;
